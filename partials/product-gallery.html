@@ -1,0 +1,24 @@
+<div class="row product-gallery mx-1 card card-raised" style="background-color: #303030;">
+    <div class="col-12 mb-0 text-center" style="margin-top: 5%;">
+        <figure class="view overlay rounded z-depth-1 main-img">
+            <a href="" data-size="710x823">
+                <img ng-src="{{prod.detail.images[gallery.current]}}" style="size: 180px, 180px;" class="img-fluid z-depth-1  rounded" alt="">
+            </a>
+        </figure>
+    </div>
+    <div class="col-12">
+        <div class="row card card-raised " style="background-color: #141414; margin-left: 0.1%;" >
+            <div class="col-12" style="margin-left: 17%;">
+                <div class="col-3" style="display: -webkit-box;">
+                    <div class="view overlay rounded z-depth-1 gallery-item"
+                        ng-repeat="img in prod.detail.images track by $index" ng-class="{active: gallery.isSet($index)}">
+                        <img ng-click="gallery.setCurrent($index)" style="size: 180px, 180px;"" class="img-fluid  rounded" ng-src="{{img}}" alt="">
+                        <div class="mask rgba-white-slight"></div>
+                    </div>
+                </div>
+    
+            </div>
+            
+        </div>
+    </div>
+</div>

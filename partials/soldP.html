@@ -1,0 +1,61 @@
+<div class="section text-center">
+
+    <div id="carouselprincipal" class="carousel slide" data-ride="carousel" ng-controller="Products as prods">
+
+        
+
+        <div class="carousel-inner">
+
+            <h2 class="title" style="color: white; padding: 20px;">Más Vendidos</h2>
+            <div class="carousel-item active" style="padding-left: 200px; padding-right: 200px;">
+                <div class="card-deck">
+                    <div class="card"
+                        style="width: 18rem; text-align: center; align-items: center; background-color: #303030;"
+                        ng-repeat="g in prods.products | orderBy: '-sold'| limitTo: 4" ng-click="prods.go(g._id)">
+                        <img class="card-img-top" ng-src="{{g.images[0]}}" alt="Card image cap">
+                        <div class="card-body">
+                            <br>
+                            <br>
+                            <p class="card-text" style="color: white;">{{g.name}}</p>
+                            <p class="card-text" style="color: white;">{{g.price | currency}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-item" style="padding-left: 200px; padding-right: 200px;">
+                <div class="card-deck">
+
+                    <div class="card"
+                        style="width: 18rem; text-align: center; align-items: center; background-color: #303030;"
+                        ng-repeat="g in prods.products | orderBy: '-sold' | limitTo: -4" ng-click="prods.go(g._id)">
+                        <img class="card-img-top" ng-src="{{g.images[0]}}" alt="Card image cap">
+                        <div class="card-body">
+                            <br>
+                            <br>
+                            <p class="card-text" style="color: white;">{{g.name}}</p>
+                            <p class="card-text" style="color: white;">{{g.price | currency}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <br><br><br>
+        <ol class="carousel-indicators">
+            
+            <li data-target="#carouselprincipal" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselprincipal" data-slide-to="1" ></li>
+        </ol>
+        <a class="carousel-control-prev" href="#carouselprincipal" role="button" data-slide="prev">
+            <i class="material-icons" style="color: #bababa;">keyboard_arrow_left</i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselprincipal" role="button" data-slide="next">
+            <i class="material-icons" style="color: #bababa;">keyboard_arrow_right</i>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+</div>

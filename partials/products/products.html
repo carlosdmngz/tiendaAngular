@@ -1,0 +1,29 @@
+<div class="row" ng-controller="Products as prods" style="background-color: #141414;">
+    <div class="col-lg-8 mx-auto">
+        <search></search>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="p in prods.products | filter:searchGems | orderBy:order" ng-click="prods.go(p._id)">
+                <div class="media align-item-lg-center flex-column flex-lg-row">
+                    <div class="media-body order-2 order-lg-1">
+                        <h3 class="mt-0 font-weight-bold mb-2" style="color: white;">{{p.name}}</h3>
+                        <p class="font-italic text-muted mb-0">{{p.description}}</p>
+                        <div class="d-flex align-items-center justify-content-between mt-1">
+                            <h6 class="font-weight-bold my-1" style="color: white;">{{p.price | currency}}</h6>
+                            <ul class="list-inline small">
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-rose"></i></li>
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-rose"></i></li>
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-rose"></i></li>
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-rose"></i></li>
+                                <li class="list-inline-item m-0"><i class="fa fa-star "></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img ng-src="{{p.images[0]}}" alt="Gems placeholder" width="130" height="130"
+                        class="ml-lg-5 order-1 order-lg-2 img-raised rounded img-fluid" />
+                        <br>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
